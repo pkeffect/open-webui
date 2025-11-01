@@ -1,0 +1,15 @@
+name: Sync Fork
+on:
+  schedule:
+    - cron: '*/30 * * * *'  # Runs every 30 minutes
+  workflow_dispatch:  # Allows manual trigger
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: tgymnich/fork-sync@v1.8
+        with:
+          owner: pkeffect
+          base: main
+          head: main
+          token: ${{ secrets.GITHUB_TOKEN }}
