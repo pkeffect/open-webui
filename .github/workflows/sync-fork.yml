@@ -7,7 +7,7 @@ jobs:
   sync:
     runs-on: ubuntu-latest   # OS
     steps:
-      - uses: pkeffect/open-webui
+      - uses: tgymnich/fork-sync@v1.8
         with:
           owner: pkeffect
           base: main
