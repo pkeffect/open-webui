@@ -7,7 +7,7 @@ jobs:
   sync:
     runs-on: ubuntu-latest   # OS
     steps:
-      - uses: Shurtu-gal/autoupdate-fork-action@v1s
+      - uses: pkeffect/open-webui
         with:
           owner: pkeffect
           base: main
