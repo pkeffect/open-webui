@@ -2,14 +2,14 @@ name: Sync Fork
 on:
   schedule:
     - cron: '*/30 * * * *'  # Runs every 30 minutes
-  workflow_dispatch:  # Allows manual trigger
+  workflow_dispatch:
 jobs:
   sync:
-    runs-on: ubuntu-latest   # OS
+    runs-on: ubuntu-latest
     steps:
-      - uses: tgymnich/fork-sync@v1.8
+      - uses: aormsby/Fork-Sync-With-Upstream-action@v3.4
         with:
-          owner: pkeffect
-          base: main
-          head: main
-          token: ${{ secrets.GITHUB_TOKEN }}
+          target_sync_branch: main
+          target_repo_token: ${{ secrets.GITHUB_TOKEN }}
+          upstream_sync_branch: main
+          upstream_sync_repo: UPSTREAM_OWNER/UPSTREAM_REPO
